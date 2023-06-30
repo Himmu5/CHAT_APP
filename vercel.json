@@ -16,7 +16,7 @@
     "routes": [
         {
             "src": "/",
-            "dest": "build/index.js"
+            "dest": "dist/index.js"
         },
         {
             "src": "/register",
@@ -36,7 +36,7 @@
         },
         {
             "src": "/(.+)",
-            "dest": "build/$1"
+            "dest": "dist/$1"
         }
     ]
 }
