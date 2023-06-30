@@ -2,26 +2,41 @@
     "buildCommand": "cd client && npm install && npm run build",
     "outputDirectory": "client/dist",
     "framework": "vite",
-    "rewrites": [
+    "builds" :[
         {
-            "source": "/register",
-            "destination": "index.js"
+            "src" : "server.js",
+            "use" : "@vercel/node"
         },
         {
-            "source": "/signin",
-            "destination": "index.js"
+            "src" : "public/**",
+            "use" : "@vercel/static"
+        }
+        
+    ],
+    "routes": [
+        {
+            "src": "/",
+            "dest": "build/index.js"
         },
         {
-            "source": "/profile",
-            "destination": "index.js"
+            "src": "/register",
+            "dest": "index.js"
         },
         {
-            "source": "/messages/(.*)",
-            "destination": "index.js"
+            "src": "/signin",
+            "dest": "index.js"
         },
         {
-            "source": "/(.*)",
-            "destination": "build/"
+            "src": "/profile",
+            "dest": "index.js"
+        },
+        {
+            "src": "/messages/(.*)",
+            "dest": "index.js"
+        },
+        {
+            "src": "/(.+)",
+            "dest": "build/$1"
         }
     ]
 }
