@@ -4,12 +4,24 @@
     "framework": "vite",
     "rewrites": [
         {
-            "source": "/(.*)",
-            "destination": "/"
+            "source": "/register",
+            "destination": "index.js"
+        },
+        {
+            "source": "/signin",
+            "destination": "index.js"
+        },
+        {
+            "source": "/profile",
+            "destination": "index.js"
+        },
+        {
+            "source": "/messages/(.*)",
+            "destination": "index.js"
         },
         {
             "source": "/(.*)",
-            "destination": "/"
+            "destination": "build/"
         }
     ]
 }
