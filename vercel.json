@@ -13,30 +13,30 @@
         }
         
     ],
-    "routes": [
+    "rewrites": [
         {
-            "src": "/",
-            "dest": "dist/"
+            "source": "/",
+            "destination": "dist/"
         },
         {
-            "src": "/register",
-            "dest": "index.js"
+            "source": "/register",
+            "destination": "index.js"
         },
         {
-            "src": "/signin",
-            "dest": "index.js"
+            "source": "/signin",
+            "destination": "index.js"
         },
         {
-            "src": "/profile",
-            "dest": "index.js"
+            "source": "/profile",
+            "destination": "index.js"
         },
         {
-            "src": "/messages/(.*)",
-            "dest": "index.js"
+            "source": "/messages/(.*)",
+            "destination": "index.js"
         },
         {
-            "src": "/(.+)",
-            "dest": "dist/$1"
+            "source": "/(.+)",
+            "destination": "dist/$1"
         }
     ]
 }
